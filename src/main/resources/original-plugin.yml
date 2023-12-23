@@ -1,0 +1,7 @@
+name: "${name}"
+authors: ["${author}"]
+version: "${version}"
+main: it.fulminazzo.minecraftevents.MinecraftEvents
+api-version: 1.13
+description: A collection plugin that joins every event described in the MinecraftEvents repository.
+website: https://github.com/Fulminazzo/MinecraftEvents

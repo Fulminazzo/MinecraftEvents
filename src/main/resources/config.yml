@@ -1,0 +1,101 @@
+#####################################################
+#  THIS FILE HAS BEEN GENERATED AUTOMATICALLY       #
+#                                                   #
+#  Please, if you want to edit some values here,    #
+#  use the corresponding files in the respective    #
+# modules, or edit one of the original-filename.yml #
+#   found in this project resources directory.      #
+#                                                   #
+#####################################################
+ender-dragon-event:
+  ender-dragon:
+    color: PINK
+    flags:
+    - PLAY_BOSS_MUSIC
+    name: '&5EnderDragon'
+    style: SOLID
+  messages:
+    1:
+    - ' '
+    - '    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    2:
+    - ' '
+    - '    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    3:
+    - ' '
+    - '    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    4:
+    - ' '
+    - '    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    5:
+    - ' '
+    - '    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    10:
+    - ' '
+    - '    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    30:
+    - ' '
+    - '    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    60:
+    - ' '
+    - '    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+  place-egg: true
+  rewards:
+  - give %killer% diamond 64
+  - bc &f
+  - bc &f         &fTOP &4DAMAGERS
+  - bc &f      &f(&b1&f) &e%player_damage_dealt_1% &4%damage_dealt_1%
+  - bc &f      &f(&b2&f) &e%player_damage_dealt_2% &4%damage_dealt_2%
+  - bc &f      &f(&b3&f) &e%player_damage_dealt_3% &4%damage_dealt_3%
+  - bc &f
+  - bc &f         &fTOP &cDAMAGED
+  - bc &f      &f(&b1&f) &e%player_damage_received_1% &c%damage_received_1%
+  - bc &f      &f(&b2&f) &e%player_damage_received_2% &c%damage_received_2%
+  - bc &f      &f(&b3&f) &e%player_damage_received_3% &c%damage_received_3%
+  - bc &f
+  timer: 60
+give-event:
+  drop-interval: 5
+  drop-strategy: RANDOM
+  messages:
+    1:
+    - ' '
+    - '    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    2:
+    - ' '
+    - '    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    3:
+    - ' '
+    - '    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    4:
+    - ' '
+    - '    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    5:
+    - ' '
+    - '    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    10:
+    - ' '
+    - '    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    30:
+    - ' '
+    - '    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+    60:
+    - ' '
+    - '    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!'
+    - ' '
+  timer: 60

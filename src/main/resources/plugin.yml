@@ -1,7 +1,34 @@
-name: "${name}"
-authors: ["${author}"]
-version: "${version}"
-main: it.fulminazzo.minecraftevents.MinecraftEvents
+#####################################################
+#  THIS FILE HAS BEEN GENERATED AUTOMATICALLY       #
+#                                                   #
+#  Please, if you want to edit some values here,    #
+#  use the corresponding files in the respective    #
+# modules, or edit one of the original-filename.yml #
+#   found in this project resources directory.      #
+#                                                   #
+#####################################################
 api-version: 1.13
+authors:
+- ${author}
+commands:
+  enderdragonevent:
+    aliases:
+    - enderdragone
+    - enderde
+    - ede
+    description: ${name} main command
+    permission: enderdragonevent.command
+  giveevent:
+    aliases:
+    - givee
+    - ge
+    description: ${name} main command
+    permission: giveevent.command
 description: A collection plugin that joins every event described in the MinecraftEvents repository.
+libraries: ${libraries}
+main: it.fulminazzo.minecraftevents.MinecraftEvents
+name: ${name}
+softdepend:
+- ItemsAdder
+version: ${version}
 website: https://github.com/Fulminazzo/MinecraftEvents

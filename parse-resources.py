@@ -17,7 +17,7 @@ def get_folders(path: str) -> list:
 def get_project_folders(path: str) -> list:
 	contents = get_folders(path)
 	for f in ["gradle", "build"]:
-		contents.remove(f)
+		if f in contents: contents.remove(f)
 	return contents
 
 def get_yaml_resources(path: str) -> list:

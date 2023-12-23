@@ -130,12 +130,13 @@ allprojects {
     }
 }
 
-tasks.register('reloadResources', Exec) {
-    commandLine "/usr/bin/python3", "parse-resources.py"
-}
-
 assemble {
-    dependsOn(reloadResources)
+    try {
+        def proc = new ProcessBuilder("/usr/bin/python3", "parse-resources.py")
+        proc.start().waitFor()
+    } catch (Exception e) {
+        e.printStackTrace()
+    }
 }
 
 dependencies {
