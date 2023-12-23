@@ -19,9 +19,10 @@ import java.util.logging.Logger;
 public interface IEventPlugin {
 
     default void onEnable() {
+        String interfaceName = "I" + getName().replaceAll("[^a-zA-Z0-9]", "");
         if (Arrays.stream(this.getClass().getInterfaces()).map(Class::getSimpleName)
-                .noneMatch(f -> f.equalsIgnoreCase("I" + getName()))) {
-            warning(EventLog.INVALID_CLASS, "%class%", this.getClass().getSimpleName(), "%expected%", "I" + getName());
+                .noneMatch(f -> f.equalsIgnoreCase(interfaceName))) {
+            warning(EventLog.INVALID_CLASS, "%class%", this.getClass().getSimpleName(), "%expected%", interfaceName);
             Bukkit.getPluginManager().disablePlugin((Plugin) this);
             return;
         }

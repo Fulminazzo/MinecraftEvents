@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class EnderDragonEvent extends EventPlugin implements IEnderDragonEvent {
+public final class EnderDragonEvent extends EventPlugin implements IEnderDragonEvent {
     private EnderDragonService enderDragonService;
 
     public EnderDragonEvent() {

@@ -16,13 +16,13 @@ commands:
     - enderdragone
     - enderde
     - ede
-    description: ${name} main command
+    description: EnderDragonEvent main command
     permission: enderdragonevent.command
   giveevent:
     aliases:
     - givee
     - ge
-    description: ${name} main command
+    description: GiveEvent main command
     permission: giveevent.command
 description: A collection plugin that joins every event described in the MinecraftEvents repository.
 libraries: ${libraries}

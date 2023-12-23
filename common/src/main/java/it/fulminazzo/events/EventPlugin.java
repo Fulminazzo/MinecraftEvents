@@ -11,8 +11,8 @@ import java.io.IOException;
 public abstract class EventPlugin extends JavaPlugin implements IEventPlugin {
     @Getter
     protected static IEventPlugin plugin;
-    private FileConfiguration configuration;
-    private FileConfiguration lang;
+    protected FileConfiguration configuration;
+    protected FileConfiguration lang;
 
     @Override
     public void onEnable() {

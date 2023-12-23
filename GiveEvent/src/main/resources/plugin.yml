@@ -10,6 +10,6 @@ softdepend:
 
 commands:
   giveevent:
-    description: "${name} main command"
+    description: "GiveEvent main command"
     permission: "giveevent.command"
     aliases: [givee, ge]

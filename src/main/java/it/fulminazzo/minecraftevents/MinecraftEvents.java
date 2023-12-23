@@ -12,10 +12,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MinecraftEvents extends EventPlugin implements IMinecraftEvents {
-    private GiveEventManager giveEventManager;
-    private ItemsManager itemsManager;
-    private GiveLocationsManager giveLocationsManager;
-    private EnderDragonService enderDragonService;
+    protected GiveEventManager giveEventManager;
+    protected ItemsManager itemsManager;
+    protected GiveLocationsManager giveLocationsManager;
+    protected EnderDragonService enderDragonService;
 
     public MinecraftEvents() {
         super();

@@ -8,6 +8,6 @@ libraries: ${libraries}
 
 commands:
   enderdragonevent:
-    description: "${name} main command"
+    description: "EnderDragonEvent main command"
     permission: "enderdragonevent.command"
     aliases: [enderdragone, enderde, ede]
