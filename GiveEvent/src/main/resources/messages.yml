@@ -1,0 +1,43 @@
+###########################################################
+#               GiveEvent messages.yml file               #
+###########################################################
+
+prefix: "&c&lGive&6&lEvent &8» &f"
+
+errors:
+  console-cannot-execute: "&cConsole cannot execute this command."
+  subcommand-not-found: "&cSubcommand &4%subcommand% &cnot found."
+  not-enough-permissions: "&cYou don't have enough permissions to execute that command."
+  not-enough-arguments: "&cYou did not specify enough arguments."
+  world-not-found: "&cWorld &4%world% &cnot found."
+  not-valid-integer: "&4%num% &cis not a valid integer."
+  not-valid-number: "&4%num% &cis not a valid number higher than 0."
+  give-event-already-running: "&cAnother give event is already running! Stop it before starting another one."
+  give-event-not-running: "&cNo give event is currently running."
+  no-item-set: "&cYou did not set any item yet!"
+  no-location-set: "&cYou did not set any location yet!"
+  not-in-list: "&cIndex &4%num% &cis too high. Please specify a number lower than &4%max%&c."
+  not-holding-item: "&cYou are not holding any item."
+  item-already-present: "&cThat item is already present in the list."
+
+general:
+  usage: "&7Usage: &c/%usage%"
+  added-location: "&aAdded location &8(%location%&8) &awith name &e%name% &ato the give locations."
+  overwritten-location: "&aOverwritten location &e%name% &afrom &8(%location1%&8) &ato &8(%location2%&8)&a."
+  location-format: "&2world: %world%&8, &2x: %x%&8, &2y: %y%&8, &2z: %z%&8"
+  give-event-started: "&cGive Event &awill start in &b%time% &aseconds."
+  give-event-stopped: "&cGive Event &astopped."
+  list-element: "&8(&e%index%&8) - &e%element%"
+  removed-location: "&aLocation &2%location% &anamed &e%name% &aremoved from list of locations."
+  added-item: "&aItem &6%item% &aadded to the list."
+  removed-item: "&aItem &6%item% &aremoved from list."
+
+help:
+  start-give-event: "&eStart a new give event countdown."
+  stop-give-event: "&eStop a new give event countdown."
+  set-give-location: "&eAdd a location where to drop items during the give event."
+  list-give-locations: "&eView a list of all the set locations."
+  remove-give-location: "&eRemove a give location."
+  set-item: "&eAdds an item to the list of items."
+  list-items: "&eView a list of all the set items."
+  remove-item: "&eRemove an item from the list of items."

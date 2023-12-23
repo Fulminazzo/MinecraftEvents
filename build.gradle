@@ -1,0 +1,100 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'it.fulminazzo'
+version = '1.0'
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.github.johnrengelman.shadow'
+
+    def author = "Fulminazzo"
+    group = "${rootProject.group}"
+    version = "${rootProject.version}"
+
+    repositories {
+        mavenCentral()
+        maven {
+            name = "spigotmc-repo"
+            url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/groups/public/"
+        }
+        maven {
+            name = "Jitpack"
+            url = 'https://jitpack.io'
+        }
+        maven {
+            name = "PlaceholderAPI"
+            url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+        }
+        maven {
+            name = "MMOItems repo"
+            url = "https://mvn.lumine.io/repository/maven-public/"
+        }
+    }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.30'
+        annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+        compileOnly 'org.spigotmc:spigot-api:1.20.2-R0.1-SNAPSHOT'
+        /*
+            ENDER DRAGON EVENT
+         */
+        //compileOnly 'org.spigotmc:spigot-api:1.16.2-R0.1-SNAPSHOT'
+        /*
+            GIVE EVENT
+         */
+        // Actually 1.8.8, missing method are being checked
+        //compileOnly 'org.spigotmc:spigot-api:1.14.4-R0.1-SNAPSHOT'
+
+        compileOnly 'net.kyori:adventure-text-serializer-legacy:4.15.0'
+        compileOnly 'net.kyori:adventure-text-minimessage:4.15.0'
+
+        compileOnly 'com.github.LoneDev6:API-ItemsAdder:3.6.1'
+
+        implementation("com.github.Fulminazzo:FulmiCollection:1.0")
+        implementation("com.github.Fulminazzo:YAMLParser:1.2")
+
+        if ("${project.name}".toString() != "common") implementation(project(":common"))
+    }
+
+    processResources {
+        def props = [
+                version: project.version, name: project.name,
+                author: author, group: project.group, module: project.name
+        ]
+        inputs.properties(props)
+        filteringCharset 'UTF-8'
+        expand props
+    }
+
+    shadowJar {
+        exclude("META-INF/**") // Removes all Maven META-INF/ files.
+        archiveFileName = "${project.name}-${version}.jar"
+    }
+
+    jar {
+        enabled = true // Required for sub projects depending on sub projects
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        archiveFileName = "${project.name}-${version}-original.jar"
+        dependsOn(processResources)
+        dependsOn(shadowJar)
+    }
+}
+
+configurations {
+    childJars
+}
+
+dependencies {
+    subprojects.each {
+        childJars project(it.path)
+        implementation project(it.path)
+    }
+}

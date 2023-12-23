@@ -1,0 +1,46 @@
+#########################################################
+#               GiveEvent config.yml file               #
+#########################################################
+
+give-event:
+  # Specify drop strategy:
+  # ALL: drop every item to every set location
+  # RANDOM: drop every item to a random location
+  drop-strategy: RANDOM
+  # Interval between one drop and another (in ticks).
+  drop-interval: 5
+  # Default timer.
+  timer: 60
+  messages:
+    60:
+      - " "
+      - "    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    30:
+      - " "
+      - "    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    10:
+      - " "
+      - "    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    5:
+      - " "
+      - "    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    4:
+      - " "
+      - "    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    3:
+      - " "
+      - "    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    2:
+      - " "
+      - "    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    1:
+      - " "
+      - "    &c&lGive&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "

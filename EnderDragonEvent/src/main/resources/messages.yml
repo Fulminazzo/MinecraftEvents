@@ -1,0 +1,31 @@
+##################################################################
+#               EnderDragonEvent messages.yml file               #
+##################################################################
+
+prefix: "&5&lEnderDragon&6&lEvent &8» &f"
+
+errors:
+  subcommand-not-found: "&cSubcommand &4%subcommand% &cnot found."
+  not-enough-permissions: "&cYou don't have enough permissions to execute that command."
+  not-enough-arguments: "&cYou did not specify enough arguments."
+  not-valid-number: "&4%num% &cis not a valid number higher than 0."
+  not-valid-enum: "&4%arg% &cis not a valid %enum%. If you are unsure, check the plugin documentation."
+  world-not-found: "&cWorld &4%world% &cnot found."
+  world-not-end: "&cWorld &4%world% &cis not of type end."
+  ender-dragon-still-alive: "&cEnder Dragon in world &4%world% &cis still alive. Kill it before starting a new event."
+  ender-dragon-event-already-running: "&cAnother ender dragon event is already running in world &4%world%&c! Stop it before starting another one."
+  ender-dragon-event-not-running: "&cNo ender dragon event is currently running in world &4%world%&c."
+
+general:
+  usage: "&7Usage: &c/%usage%"
+  spawning-ender-dragon: |-
+    &aSpawning &5Ender Dragon &ain world &2%world% &ain &b%time% seconds&a. Settings:
+    &8- &aName&8: &e%name%
+    &8- &aBossBar Color&8: &c%color%
+    &8- &aBossBar Style&8: &d%style%
+    &8- &aBossBar Flags&8: [&6%flags%&8]
+  ender-dragon-event-stopped: "&5EnderDragon &6Event &asuccessfully stopped."
+
+help:
+  start-dragon-event: "&eStart a new ender dragon event in the specified or current world."
+  stop-dragon-event: "&eStops an ender dragon event in the specified or current world."

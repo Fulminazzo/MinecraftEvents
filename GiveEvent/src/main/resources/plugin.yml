@@ -1,0 +1,14 @@
+name: "${name}"
+authors: ["${author}"]
+version: "${version}"
+main: it.fulminazzo.giveevent.GiveEvent
+api-version: 1.13
+description: A simple plugin to initiate an automatic give event in your server.
+softdepend:
+  - ItemsAdder
+
+commands:
+  giveevent:
+    description: "${name} main command"
+    permission: "giveevent.command"
+    aliases: [givee, ge]

@@ -1,0 +1,63 @@
+################################################################
+#               EnderDragonEvent config.yml file               #
+################################################################
+
+ender-dragon-event:
+  ender-dragon:
+    name: "&5EnderDragon"
+    color: "PINK"
+    style: "SOLID"
+    flags:
+      - PLAY_BOSS_MUSIC
+  rewards:
+    - "give %killer% diamond 64"
+    - "bc &f"
+    - "bc &f         &fTOP &4DAMAGERS"
+    - "bc &f      &f(&b1&f) &e%player_damage_dealt_1% &4%damage_dealt_1%"
+    - "bc &f      &f(&b2&f) &e%player_damage_dealt_2% &4%damage_dealt_2%"
+    - "bc &f      &f(&b3&f) &e%player_damage_dealt_3% &4%damage_dealt_3%"
+    - "bc &f"
+    - "bc &f         &fTOP &cDAMAGED"
+    - "bc &f      &f(&b1&f) &e%player_damage_received_1% &c%damage_received_1%"
+    - "bc &f      &f(&b2&f) &e%player_damage_received_2% &c%damage_received_2%"
+    - "bc &f      &f(&b3&f) &e%player_damage_received_3% &c%damage_received_3%"
+    - "bc &f"
+  # If this option is set to true,
+  # killing the event ender dragon will
+  # spawn another egg on top of the portal.
+  place-egg: true
+  # Default timer.
+  timer: 60
+  messages:
+    60:
+      - " "
+      - "    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    30:
+      - " "
+      - "    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    10:
+      - " "
+      - "    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    5:
+      - " "
+      - "    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    4:
+      - " "
+      - "    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    3:
+      - " "
+      - "    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    2:
+      - " "
+      - "    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "
+    1:
+      - " "
+      - "    &5&lEnderDragon&6&lEvent &fwill start in &b%time% seconds&f!"
+      - " "

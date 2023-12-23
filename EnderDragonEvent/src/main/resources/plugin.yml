@@ -1,0 +1,12 @@
+name: "${name}"
+authors: ["${author}"]
+version: "${version}"
+main: it.fulminazzo.enderdragonevent.EnderDragonEvent
+api-version: 1.13
+description: A simple plugin to respawn an Ender Dragon and start an event.
+
+commands:
+  enderdragonevent:
+    description: "${name} main command"
+    permission: "enderdragonevent.command"
+    aliases: [enderdragone, enderde, ede]
