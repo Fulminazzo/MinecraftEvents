@@ -4,6 +4,7 @@ version: "${version}"
 main: it.fulminazzo.enderdragonevent.EnderDragonEvent
 api-version: 1.13
 description: A simple plugin to respawn an Ender Dragon and start an event.
+libraries: ${libraries}
 
 commands:
   enderdragonevent:

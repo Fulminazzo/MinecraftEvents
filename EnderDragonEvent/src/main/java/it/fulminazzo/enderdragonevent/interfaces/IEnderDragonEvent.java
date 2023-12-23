@@ -9,6 +9,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
 public interface IEnderDragonEvent extends IEventPlugin {
+    int compatibleVersion = 16;
 
     default void loadAll() throws Exception {
         IEventPlugin.super.loadAll();
@@ -22,6 +23,11 @@ public interface IEnderDragonEvent extends IEventPlugin {
         IEventPlugin.super.unloadAll();
         EnderDragonService enderDragonService = getEnderDragonService();
         if (enderDragonService != null) enderDragonService.stopAll();
+    }
+
+    @Override
+    default int getCompatibleVersion() {
+        return compatibleVersion;
     }
 
     void setEnderDragonService(EnderDragonService enderDragonService);

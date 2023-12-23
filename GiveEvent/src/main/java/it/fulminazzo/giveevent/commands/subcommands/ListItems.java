@@ -1,6 +1,5 @@
 package it.fulminazzo.giveevent.commands.subcommands;
 
-import it.fulminazzo.events.EventPlugin;
 import it.fulminazzo.events.commands.EventCommand;
 import it.fulminazzo.events.commands.subcommands.EventSubCommand;
 import it.fulminazzo.events.interfaces.IEventPlugin;

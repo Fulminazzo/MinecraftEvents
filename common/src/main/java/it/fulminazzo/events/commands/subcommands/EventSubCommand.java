@@ -1,6 +1,5 @@
 package it.fulminazzo.events.commands.subcommands;
 
-import it.fulminazzo.events.EventPlugin;
 import it.fulminazzo.events.commands.EventCommand;
 import it.fulminazzo.events.interfaces.EventPermission;
 import it.fulminazzo.events.interfaces.IEventPlugin;
@@ -9,10 +8,8 @@ import lombok.Getter;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

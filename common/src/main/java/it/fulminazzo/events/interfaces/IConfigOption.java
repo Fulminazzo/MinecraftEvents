@@ -30,7 +30,7 @@ public interface IConfigOption {
 
     String getPath();
 
-    private FileConfiguration getConfiguration() {
+    default FileConfiguration getConfiguration() {
         return EventPlugin.getPlugin().getConfiguration();
     }
 }

@@ -57,7 +57,7 @@ public abstract class EventSubCommandable extends EventCommand implements TabExe
     }
 
     public void addSubCommands(EventSubCommand... subCommands) {
-        if (subCommands != null) this.subCommands.addAll(List.of(subCommands));
+        if (subCommands != null) this.subCommands.addAll(Arrays.asList(subCommands));
     }
 
     public String getUsage() {

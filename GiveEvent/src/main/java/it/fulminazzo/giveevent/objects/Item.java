@@ -2,7 +2,6 @@ package it.fulminazzo.giveevent.objects;
 
 import it.fulminazzo.events.enums.EventLog;
 import it.fulminazzo.events.interfaces.IEventPlugin;
-import it.fulminazzo.events.utils.VersionsUtils;
 import it.fulminazzo.fulmicollection.objects.Printable;
 import it.fulminazzo.giveevent.utils.PluginUtils;
 import it.fulminazzo.yamlparser.annotations.PreventSaving;
@@ -50,7 +49,7 @@ public class Item extends Printable {
                 .map(e -> new Enchant(e.getKey(), e.getValue()))
                 .collect(Collectors.toList());
         this.itemFlags = new ArrayList<>(meta.getItemFlags());
-        if (VersionsUtils.is1_(14)) {
+        if (plugin.isVersion(14)) {
             if (meta.hasCustomModelData()) this.customModelData = meta.getCustomModelData();
         }
     }
@@ -68,7 +67,7 @@ public class Item extends Printable {
             if (lore != null) meta.setLore(lore);
             if (enchants != null) enchants.forEach(e -> meta.addEnchant(e.getEnchantment(), e.getLevel(), true));
             if (itemFlags != null) meta.addItemFlags(itemFlags.toArray(new ItemFlag[0]));
-            if (VersionsUtils.is1_(14)) {
+            if (plugin.isVersion(14)) {
                 if (customModelData != null) meta.setCustomModelData(customModelData);
             }
             itemStack.setItemMeta(meta);

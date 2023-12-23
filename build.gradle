@@ -67,7 +67,8 @@ allprojects {
     processResources {
         def props = [
                 version: project.version, name: project.name,
-                author: author, group: project.group, module: project.name
+                author: author, group: project.group, module: project.name,
+                libraries: ["org.yaml:snakeyaml:2.2"]
         ]
         inputs.properties(props)
         filteringCharset 'UTF-8'
@@ -76,7 +77,16 @@ allprojects {
 
     shadowJar {
         exclude("META-INF/**") // Removes all Maven META-INF/ files.
+        exclude("original-*")
         archiveFileName = "${project.name}-${version}.jar"
+
+        relocate("it.fulminazzo.", "it.fulminazzo.${project.name.toLowerCase()}.") {
+            exclude("it.fulminazzo.${project.name.toLowerCase()}.**")
+        }
+
+        dependencies {
+            exclude(dependency("org.yaml:snakeyaml:2.2"))
+        }
     }
 
     jar {
@@ -88,13 +98,21 @@ allprojects {
     }
 }
 
+tasks.register('reloadResources', Exec) {
+    commandLine "/usr/bin/python3", "parse-resources.py"
+}
+
+assemble {
+    dependsOn(reloadResources)
+}
+
 configurations {
-    childJars
 }
 
 dependencies {
-    subprojects.each {
-        childJars project(it.path)
-        implementation project(it.path)
-    }
+    subprojects.each {implementation project(it.path)}
+}
+
+shadowJar {
+    subprojects.each {exclude("it/fulminazzo/${it.name.toLowerCase()}/${it.name}.class")}
 }

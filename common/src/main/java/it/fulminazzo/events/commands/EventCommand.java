@@ -1,6 +1,5 @@
 package it.fulminazzo.events.commands;
 
-import it.fulminazzo.events.EventPlugin;
 import it.fulminazzo.events.interfaces.IEventPlugin;
 import lombok.Getter;
 

@@ -1,7 +1,6 @@
 package it.fulminazzo.events.interfaces;
 
 import it.fulminazzo.events.enums.EventLog;
-import it.fulminazzo.events.utils.VersionsUtils;
 import it.fulminazzo.yamlparser.objects.configurations.FileConfiguration;
 import it.fulminazzo.yamlparser.utils.FileUtils;
 import it.fulminazzo.yamlparser.utils.JarUtils;
@@ -26,7 +25,7 @@ public interface IEventPlugin {
             Bukkit.getPluginManager().disablePlugin((Plugin) this);
             return;
         }
-        if (!VersionsUtils.is1_(getCompatibleVersion())) {
+        if (!isVersion(getCompatibleVersion())) {
             Bukkit.getConsoleSender().sendMessage(EventLog.VERSION_NOT_COMPATIBLE.getMessage(
                     "%plugin%", getDisplayName(),
                     "%version%", String.valueOf(getCompatibleVersion())
@@ -103,8 +102,19 @@ public interface IEventPlugin {
         if (message != null) getLogger().warning(message);
     }
 
+    default boolean isVersion(int version) {
+        return version <= getMinecraftVersion();
+    }
+
     default int getCompatibleVersion() {
         return -1;
+    }
+
+    default int getMinecraftVersion() {
+        String serverVersion = Bukkit.getBukkitVersion().split("-")[0];
+        serverVersion = serverVersion.substring(serverVersion.indexOf(".") + 1);
+        serverVersion = serverVersion.substring(0, serverVersion.indexOf("."));
+        return Integer.parseInt(serverVersion);
     }
 
     PluginCommand getCommand(String name);

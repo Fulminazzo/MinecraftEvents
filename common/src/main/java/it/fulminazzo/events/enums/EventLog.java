@@ -6,6 +6,9 @@ public enum EventLog {
     INVALID_CLASS("Class %class% does not implement any interface %expected%. Please specify one before enabling the plugin."),
 
     VERSION_NOT_COMPATIBLE("&c%plugin% &fis not compatible with the current version. Please use &aMinecraft 1.%version% &for higher."),
+    INCOMPATIBLE_VERSION("%feature% is not compatible with version %version%: every function will be disabled. " +
+            "If you wish to use it, please update your Minecraft server."),
+
     PLUGIN_ENABLED("&c%plugin%&f(&bv%version%&f) by &6%author% &fsuccessfully &aenabled&f!"),
     ERROR_DURING_ENABLE("There was an error while enabling the plugin: %error%"),
     PLUGIN_DISABLED("&c%plugin%&f(&bv%version%&f) by &6%author% &fsuccessfully &cdisabled&f!"),

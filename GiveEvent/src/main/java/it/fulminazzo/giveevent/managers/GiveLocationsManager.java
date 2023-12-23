@@ -1,6 +1,5 @@
 package it.fulminazzo.giveevent.managers;
 
-import it.fulminazzo.events.EventPlugin;
 import it.fulminazzo.events.interfaces.IEventPlugin;
 import it.fulminazzo.giveevent.objects.GiveLocation;
 import it.fulminazzo.yamlparser.objects.configurations.FileConfiguration;

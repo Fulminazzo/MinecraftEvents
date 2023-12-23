@@ -1,6 +1,5 @@
 package it.fulminazzo.giveevent.commands.subcommands;
 
-import it.fulminazzo.events.EventPlugin;
 import it.fulminazzo.events.commands.EventCommand;
 import it.fulminazzo.events.commands.subcommands.EventSubCommand;
 import it.fulminazzo.events.interfaces.IEventPlugin;
@@ -9,7 +8,6 @@ import it.fulminazzo.giveevent.enums.Message;
 import it.fulminazzo.giveevent.interfaces.IGiveEvent;
 import it.fulminazzo.giveevent.managers.ItemsManager;
 import it.fulminazzo.giveevent.objects.Item;
-import it.fulminazzo.reflectionutils.objects.ReflObject;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 

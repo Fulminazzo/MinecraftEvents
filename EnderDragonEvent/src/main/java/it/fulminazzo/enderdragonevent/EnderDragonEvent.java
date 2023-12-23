@@ -17,11 +17,6 @@ public class EnderDragonEvent extends EventPlugin implements IEnderDragonEvent {
     }
 
     @Override
-    public int getCompatibleVersion() {
-        return 16;
-    }
-
-    @Override
     public String getDisplayName() {
         return "&5EnderDragon&6Event";
     }

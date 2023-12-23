@@ -7,7 +7,6 @@ import it.fulminazzo.giveevent.enums.GiveStrategy;
 import it.fulminazzo.giveevent.interfaces.IGiveEvent;
 import it.fulminazzo.giveevent.objects.GiveLocation;
 import it.fulminazzo.giveevent.objects.Item;
-import it.fulminazzo.reflectionutils.objects.ReflObject;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
