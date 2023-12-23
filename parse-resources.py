@@ -24,7 +24,7 @@ def get_yaml_resources(path: str) -> list:
 	resources = []
 	directory = os.path.join(path, "src/main/resources")
 	if not os.path.isdir(directory): return resources
-	for f in os.listdir():
+	for f in os.listdir(directory):
 		if f.endswith(".yml"): resources.append(f)
 	return resources
 

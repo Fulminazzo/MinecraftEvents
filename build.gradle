@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
     id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
@@ -9,6 +10,7 @@ version = '1.0'
 allprojects {
     apply plugin: 'java'
     apply plugin: 'com.github.johnrengelman.shadow'
+    apply plugin: 'maven-publish'
 
     def author = "Fulminazzo"
     group = "${rootProject.group}"
@@ -61,7 +63,7 @@ allprojects {
         implementation("com.github.Fulminazzo:FulmiCollection:1.0")
         implementation("com.github.Fulminazzo:YAMLParser:1.2")
 
-        if ("${project.name}".toString() != "common") implementation(project(":common"))
+        if ("${project.name}".toString() != "common") implementation(this.project(":common"))
     }
 
     processResources {
@@ -96,6 +98,36 @@ allprojects {
         dependsOn(processResources)
         dependsOn(shadowJar)
     }
+
+    build {
+        dependsOn(publishToMavenLocal)
+    }
+
+    tasks.register('sourcesJar', Jar) {
+        from sourceSets.main.allJava
+        archiveClassifier = 'sources'
+    }
+
+    tasks.register('javadocJar', Jar) {
+        from javadoc
+        archiveClassifier = 'javadoc'
+    }
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                String projectName = "${project.name}"
+                String rootProjectName = "${rootProject.name}"
+                groupId = "${rootProject.group}" + (projectName == rootProjectName ? "" : ".${rootProjectName}")
+                artifactId = "${project.name}"
+                version = "${rootProject.version}"
+
+                from components.java
+                artifact sourcesJar
+                artifact javadocJar
+            }
+        }
+    }
 }
 
 tasks.register('reloadResources', Exec) {
@@ -104,9 +136,6 @@ tasks.register('reloadResources', Exec) {
 
 assemble {
     dependsOn(reloadResources)
-}
-
-configurations {
 }
 
 dependencies {
