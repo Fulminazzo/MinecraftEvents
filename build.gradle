@@ -60,7 +60,7 @@ allprojects {
 
         compileOnly 'com.github.LoneDev6:API-ItemsAdder:3.6.1'
 
-        implementation("com.github.Fulminazzo:FulmiCollection:1.0")
+        implementation("com.github.Fulminazzo:FulmiCollection:1.1")
         implementation("com.github.Fulminazzo:YAMLParser:1.2")
 
         if ("${project.name}".toString() != "common") implementation(this.project(":common"))
